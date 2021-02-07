@@ -6,13 +6,8 @@ import java.util.List;
 public class Queue {
     private List<Duck> queue = new ArrayList<>();
 
-    public boolean addToQueue(Duck duck, int maxElementInQueue){
-        if(queue.size()<maxElementInQueue){
+    public void addToQueue(Duck duck){
             queue.add(duck);
-            return true;
-        } else{
-            return false;
-        }
     }
 
     public void removeFromQueue(){
