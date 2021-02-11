@@ -23,7 +23,7 @@ public class RunSimulation {
 
                 while (!isFetched) {
                     int randomTemp = randomNumber(i, n) + 1; //Queue number to get foremost duck
-                    duck = startingQueue.get(randomTemp).getDuck(); //Get duck by using peek and removing it from starting queue
+                    duck = (Duck) startingQueue.get(randomTemp).getDuck(); //Get duck by using peek and removing it from starting queue
 
                     if (duck != null) {
                         while (!isAddedToNewQueue) {
@@ -46,7 +46,7 @@ public class RunSimulation {
 
             //Display winner then Queue size is 1
             if (startingQueue.size() == 1) {
-                displayWinner(emptyQueuesTemp.get(0).getQueue().get(0));
+                displayWinner((Duck) emptyQueuesTemp.get(0).getQueue().get(0));
             }
 
         }

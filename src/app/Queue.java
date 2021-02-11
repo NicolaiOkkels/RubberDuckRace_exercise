@@ -3,22 +3,22 @@ package app;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Queue {
-    private List<Duck> queue = new ArrayList<>();
+public class Queue<T> {
+    private List<T> queue = new ArrayList<>();
 
-    public void addToQueue(Duck duck){
-            queue.add(duck);
+    public void addToQueue(T obj){
+            queue.add(obj);
     }
 
     public void removeFromQueue(){
         queue.remove(0);
     }
 
-    public List<Duck> getQueue() {
+    public List<T> getQueue() {
         return queue;
     }
 
-    public Duck peek(){
+    public T peek(){
         return queue.get(0);
     }
 
@@ -26,12 +26,12 @@ public class Queue {
         return queue.size();
     }
 
-    public Duck getDuck(){
-        Duck duck;
+    public T getDuck(){
+        T obj;
         if(queue.size()>0){
-            duck = peek();
+            obj = peek();
             removeFromQueue();
-            return duck;
+            return obj;
         } else {
             return null;
         }
